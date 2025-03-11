@@ -1,19 +1,19 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: babuaugrepoaug24 
+  name: pod1 
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: babuaugrepoaug24
+      app: pod1
   template:
     metadata:
       labels:
-        app: babuaugrepoaug24 
+        app: pod1 
     spec:
       containers:
-        - name: babuaugrepoaug24 
+        - name: pod1 
           image: nginx
           ports:
           - containerPort: 80
@@ -21,10 +21,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-    name: babuaugrepoaug24
+    name: pod1
 spec:
     type: LoadBalancer
     ports:
     - port: 80 
     selector:
-        app: babuaugrepoaug24
+        app: pod1
